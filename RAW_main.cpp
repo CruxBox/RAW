@@ -25,7 +25,6 @@ int main()
 
     //8 bit version channels
     vector<unsigned char> channels[4];
-    // unsigned char red,green1,green2,blue;
 
     memset(buffer, '\0', sizeof(buffer));
 
@@ -44,16 +43,7 @@ int main()
             channels[GREEN2].push_back(char(g2/16));
             b = ((uint16_t(buffer[1] & 0x0F) << 8) | uint8_t(buffer[2]));
             channels[BLUE].push_back(char(b/16));
-//
-            // green2 = (uint8_t(buffer[0]));
-            // channels[GREEN2].push_back(green2);
-            // green2 = ((uint8_t(buffer[1]) >> 4) & 0x0F);
-            // channels[GREEN2].push_back(green2);
 
-            // blue = ((uint8_t(buffer[1]  & 0x0F ) << 4));
-            // channels[BLUE].push_back(blue);
-            // blue =  uint8_t(buffer[2]);
-            // channels[BLUE].push_back(blue);
         }
         else{
 
@@ -61,16 +51,6 @@ int main()
             channels[RED].push_back(char(r/16));
             g = ((uint16_t(buffer[1] & 0x0F) << 8) | uint8_t(buffer[2]));
             channels[GREEN1].push_back(char(g/16));
-
-            // red = (uint8_t(buffer[0]));
-            // channels[RED].push_back(red);
-            // red =  (uint8_t(buffer[1]) >> 4) & 0x0F;
-            // channels[RED].push_back(red);
-
-            // green1 = (uint8_t(buffer[1] & 0x0F) << 4);
-            // channels[GREEN1].push_back(green1);
-            // green1 =  uint8_t(buffer[2]);
-            // channels[GREEN1].push_back(green1);
         }
     }
 
