@@ -78,8 +78,9 @@ int main()
    		green2image<<0<<channels[GREEN2][i]<<0;
    		blueimage<<0<<0<<channels[BLUE][i];
    	}
-   	vector<char> result(3*row*col);
    
+   	//Linear interpolation
+   	vector<char> result(3*row*col);
     for (unsigned int i = 0; i < row; i++) {
         for (unsigned int j = 0; j < col; j++) {
             int imOff = 3 * (i * col + j);
